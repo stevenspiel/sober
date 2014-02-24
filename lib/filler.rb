@@ -1,36 +1,20 @@
 require_relative 'words/words.rb'
 
 class Filler
-  def self.random_noun
-    NOUNS.sample
-  end
+  def self.n; NOUNS.sample; end
+  def self.v; VERBS.sample; end
+  def self.a; ADJECTIVES.sample; end
+  def self.pp; PREPOSITIONS.sample; end
+  def self.ad; ADVERBS.sample; end
+  def self.pr; PRONOUNS.sample; end
+  def self.c; CONJUNCTIONS.sample; end
+  def self.pn; PROPER_NOUNS.sample; end
+  def self.pcn; PUNCTUATION.sample; end
 
-  def self.random_verb
-    VERBS.sample
-  end
-
-  def self.random_adjective
-    ADJECTIVES.sample
-  end
-
-  def self.random_proposition
-    PREPOSITIONS.sample
-  end
-
-  def self.random_adverb
-    ADVERBS.sample
-  end
-
-  def self.random_pronoun
-    PRONOUNS.sample
-  end
-
-  def self.random_conjunctions
-    CONJUNCTIONS.sample
-  end
-
-  def self.proper_noun
-    PROPER_NOUNS.sample
+  def self.sentence
+    # clause =
+    sentence_sample = [self.n,self.a,self.c,self.pn,self.a,self.pp,self.n,self.v,self.c,self.a,self.v]
+    sentencified = sentence_sample.join(" ") + self.pcn
   end
 
   class Name
@@ -48,7 +32,7 @@ class Filler
   end
 
   class Dictionary
-    def self.random_word
+    def self.word
     end
   end
 
