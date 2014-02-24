@@ -1,5 +1,4 @@
-require '../words/words.rb'
-
+require_relative 'words/words.rb'
 
 class Filler
   def self.random_noun
@@ -54,4 +53,3 @@ class Filler
   end
 
 end
-
