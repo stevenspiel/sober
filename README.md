@@ -14,8 +14,11 @@ require 'filler'
 Available commands for current build (0.0.1)
 
 `Filler.sentence` (accepts params :medium(defualt), :long, and :short)
+
 `Filler.sentences` (accepts number as parameter. default is 3)
+
 `Filler.paragraph` (accepts params :medium(default), :lone, and :short)
+
 `Filler.paragraphs` (accepts number as parameter. default is 3)
 
 Also supports generating names
