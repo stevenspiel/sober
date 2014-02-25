@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.authors     = ["Steven Spiel"]
   s.email       = ["stevenspiel@gmail.com"]
   s.homepage    = "http://www.stevenspiel.com"
-  s.summary     = "Add filler text in English form"
+  s.summary     = "Generate English filler text"
   s.description = "Add filler text in English form"
   s.license     = 'mit'
 

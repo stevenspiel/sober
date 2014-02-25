@@ -56,13 +56,9 @@ class Filler
       paragraph_array = [short_clauses,medium_clauses,punctuated_clauses,long_clauses].flatten(1).sample(n)
       return paragraph_array.map {|sentence_array| sentencefy(sentence_array)}.join(" ")
     end
-
-    #randomly lengthed sentence (defualt)
-    sentence_array =[short_clauses,medium_clauses,punctuated_clauses,long_clauses].sample.sample
-    return self.sentencefy(sentence_array)
   end
 
-  def self.sentences(n)
+  def self.sentences(n = 3)
     self.sentence(n)
   end
 
@@ -77,7 +73,7 @@ class Filler
     self.sentences(n)
   end
 
-  def self.paragraphs(n)
+  def self.paragraphs(n = 3)
     block = []
     n.times { block << self.paragraph }
     block.join("\n\n")
