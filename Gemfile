@@ -12,3 +12,5 @@ gemspec
 
 # To use debugger
 # gem 'debugger'
+
+# gem 'rspec-rails', '~> 3.0.0.beta'

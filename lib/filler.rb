@@ -4,8 +4,7 @@ require_relative 'logic/medium_clauses'
 require_relative 'logic/long_clauses'
 require_relative 'logic/punctuated_clauses'
 
-
-class Filler
+module Filler
   def self.n; NOUNS.sample; end
   def self.pn; PROPER_NOUNS.sample; end
   def self.v; VERBS.sample; end
