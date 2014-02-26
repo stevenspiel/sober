@@ -1,8 +1,12 @@
-medium_clauses = [
-  [Filler.pp,Filler.pr,Filler.ad,Filler.ad,Filler.n,Filler.ar,Filler.pn,Filler.v,Filler.a],
-  [Filler.pn,Filler.pp,Filler.n,Filler.pp,Filler.ar,Filler.ad,Filler.ad,Filler.n],
-  [Filler.pr,Filler.ad,Filler.lv,Filler.c,Filler.a,Filler.ar,Filler.n],
-  [Filler.lv,Filler.n,Filler.v,Filler.ad,Filler.ar,Filler.ar,Filler.n],
-  [Filler.v,Filler.ad,Filler.n,Filler.pp,Filler.ar,Filler.n,Filler.v],
-  [Filler.ar,Filler.n,Filler.lv,Filler.ad,Filler.a,Filler.n],
-].shuffle
+module MediumClauses
+  def medium_clauses
+    [
+      [self.pp,self.pr,self.ad,self.ad,self.n,self.ar,self.pn,self.v,self.a],
+      [self.pn,self.pp,self.n,self.pp,self.ar,self.ad,self.ad,self.n],
+      [self.pr,self.ad,self.lv,self.c,self.a,self.ar,self.n],
+      [self.lv,self.n,self.v,self.ad,self.ar,self.ar,self.n],
+      [self.v,self.ad,self.n,self.pp,self.ar,self.n,self.v],
+      [self.ar,self.n,self.lv,self.ad,self.a,self.n]
+    ].shuffle
+  end
+end

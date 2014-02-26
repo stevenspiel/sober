@@ -1,8 +1,13 @@
-short_clauses = [
-  [Filler.lv,Filler.n,Filler.v,Filler.ad,Filler.ar,Filler.n],
-  [Filler.pp,Filler.ar,Filler.ad,Filler.n,Filler.lv,Filler.n],
-  [Filler.pp,Filler.n,Filler.n,Filler.lv,Filler.n],
-  [Filler.n,Filler.v,Filler.c,Filler.n,Filler.v],
-  [Filler.n,Filler.v,Filler.ar,Filler.n],
-  [Filler.n,Filler.lv,Filler.ar,Filler.n],
-].shuffle
+module ShortClauses
+  def short_clauses
+    [
+      [self.lv,self.n,self.v,self.ad,self.ar,self.n],
+      [self.pp,self.ar,self.ad,self.n,self.lv,self.n],
+      [self.pp,self.n,self.n,self.lv,self.n],
+      [self.n,self.v,self.c,self.n,self.v],
+      [self.n,self.v,self.ar,self.n],
+      [self.n,self.lv,self.ar,self.n]
+    ].shuffle
+  end
+end
+

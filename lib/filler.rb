@@ -1,4 +1,9 @@
 require_relative 'words/words.rb'
+require_relative 'logic/short_clauses'
+require_relative 'logic/medium_clauses'
+require_relative 'logic/long_clauses'
+require_relative 'logic/punctuated_clauses'
+
 
 class Filler
   def self.n; NOUNS.sample; end
@@ -13,47 +18,22 @@ class Filler
   def self.c; CONJUNCTIONS.sample; end
   def self.pcn; PUNCTUATION.sample; end
 
-  def self.sentence(type = :medium, paragraph_length = nil)
-    short_clauses = [
-      [self.lv,self.n,self.v,self.ad,self.ar,self.n],
-      [self.pp,self.ar,self.ad,self.n,self.lv,self.n],
-      [self.pp,self.n,self.n,self.lv,self.n],
-      [self.n,self.v,self.c,self.n,self.v],
-      [self.n,self.v,self.ar,self.n],
-      [self.n,self.lv,self.ar,self.n],
-    ].shuffle
-    return sentencefy(short_clauses.first) if type == :short
+  def self.sentence(type = :medium)
+    extend ShortClauses
+    return sentencefy(Filler.short_clauses.first) if type == :short
 
-    medium_clauses = [
-      [self.pp,self.pr,self.ad,self.ad,self.n,self.ar,self.pn,self.v,self.a],
-      [self.pn,self.pp,self.n,self.pp,self.ar,self.ad,self.ad,self.n],
-      [self.pr,self.ad,self.lv,self.c,self.a,self.ar,self.n],
-      [self.lv,self.n,self.v,self.ad,self.ar,self.ar,self.n],
-      [self.v,self.ad,self.n,self.pp,self.ar,self.n,self.v],
-      [self.ar,self.n,self.lv,self.ad,self.a,self.n],
-    ].shuffle
-    return sentencefy(medium_clauses.first) if type == :medium
+    extend MediumClauses
+    return sentencefy(Filler.medium_clauses.first) if type == :medium
 
-    long_clauses = [
-      [self.n,self.a,self.c,self.n,self.v,self.a,self.pp,self.n,self.v,self.c,self.n,self.v,self.n],
-      short_clauses[0] + short_clauses[1],
-      short_clauses[2] + short_clauses[3],
-      short_clauses[4] + short_clauses[5],
-      medium_clauses[0] + medium_clauses[1],
-      medium_clauses[2] + medium_clauses[3],
-      medium_clauses[4] + short_clauses[5]
-    ]
-    return sentencefy(long_clauses.sample) if type == :long
+    extend LongClauses
+    return sentencefy(Filler.long_clauses.sample) if type == :long
 
-    punctuated_clauses = [
-      [short_clauses.sample[0..-1] + [self.n + self.pcn] + short_clauses.sample],
-      [medium_clauses.sample[0..-1] + [self.n + self.pcn] + short_clauses.sample]
-    ]
+    extend PunctuatedClauses
 
     #for paragraphs and n number of sentences
     if type.is_a?(Fixnum)
       n = type
-      paragraph_array = [short_clauses,medium_clauses,punctuated_clauses,long_clauses].flatten(1).sample(n)
+      paragraph_array = [Filler.short_clauses,Filler.medium_clauses,Filler.punctuated_clauses,Filler.long_clauses].flatten(1).sample(n)
       return paragraph_array.map {|sentence_array| sentencefy(sentence_array)}.join(" ")
     end
   end
@@ -77,7 +57,7 @@ class Filler
     block = []
     n.times { block << self.paragraph }
     block.join("\n\n")
-  end 
+  end
 
   private
 
@@ -87,6 +67,5 @@ class Filler
     sentencified
   end
 end
-
 
 require_relative 'name.rb'
