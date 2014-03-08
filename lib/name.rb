@@ -1,4 +1,4 @@
-class Filler::Name
+class TextEng::Name
   def self.first_name
     first_name = FIRST_NAMES.sample
     first_name[0] = first_name[0].upcase

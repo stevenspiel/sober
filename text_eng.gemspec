@@ -1,17 +1,17 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "filler/version"
+require "text_eng/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "filler"
-  s.version     = Filler::VERSION
+  s.name        = "text_eng"
+  s.version     = TextEng::VERSION
   s.authors     = ["Steven Spiel"]
   s.email       = ["stevenspiel@gmail.com"]
   s.homepage    = "http://www.stevenspiel.com"
   s.summary     = "Generate English filler text"
-  s.description = "Add filler text in English form"
+  s.description = "Random text generation in English form"
   s.license     = 'mit'
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]

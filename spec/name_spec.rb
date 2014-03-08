@@ -1,9 +1,9 @@
 require_relative 'spec_helper'
 
-describe Filler::Name do
-  let(:first_name){Filler::Name.first_name}
-  let(:last_name){Filler::Name.last_name}
-  let(:full_name){Filler::Name.name}
+describe TextEng::Name do
+  let(:first_name){TextEng::Name.first_name}
+  let(:last_name){TextEng::Name.last_name}
+  let(:full_name){TextEng::Name.name}
 
   describe '#first_name' do
     it "should return a capitalized names" do

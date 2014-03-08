@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    filler (0.0.1)
+    text_eng (0.0.1)
       rails (~> 4.0.0)
 
 GEM
@@ -92,5 +92,5 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  filler!
   rspec
+  text_eng!

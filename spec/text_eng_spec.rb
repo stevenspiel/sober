@@ -1,7 +1,7 @@
 require_relative 'spec_helper'
 
-describe Filler do
-  let(:default_sentence){Filler.sentence}
+describe TextEng do
+  let(:default_sentence){TextEng.sentence}
 
   describe '#sentencefy' do
     let(:string){"this is a sentence"}
@@ -16,9 +16,9 @@ describe Filler do
   end
 
   describe '#sentence' do
-    let(:short_sentence){Filler.sentence(:short)}
-    let(:medium_sentence){Filler.sentence(:medium)}
-    let(:long_sentence){Filler.sentence(:long)}
+    let(:short_sentence){TextEng.sentence(:short)}
+    let(:medium_sentence){TextEng.sentence(:medium)}
+    let(:long_sentence){TextEng.sentence(:long)}
 
     it "returns a string" do
       expect(medium_sentence).to be_a_kind_of(String)
@@ -39,16 +39,16 @@ describe Filler do
 
   describe '#sentences(n)' do
     it "returns the number of sentences (periods) defined in the argument" do
-      expect(Filler.sentences(2).count(".")).to eq(2)
-      expect(Filler.sentences(5).count(".")).to eq(5)
+      expect(TextEng.sentences(2).count(".")).to eq(2)
+      expect(TextEng.sentences(5).count(".")).to eq(5)
     end
   end
 
   describe '#paragraph' do
-    let(:default_paragraph){Filler.paragraph}
-    let(:short_paragraph){Filler.paragraph(:short)}
-    let(:medium_paragraph){Filler.paragraph(:medium)}
-    let(:long_paragraph){Filler.paragraph(:long)}
+    let(:default_paragraph){TextEng.paragraph}
+    let(:short_paragraph){TextEng.paragraph(:short)}
+    let(:medium_paragraph){TextEng.paragraph(:medium)}
+    let(:long_paragraph){TextEng.paragraph(:long)}
 
     it "returns more than one sentence" do
       expect(default_paragraph.count(".")).to be > 1
@@ -77,19 +77,19 @@ describe Filler do
 
   describe '#paragraphs(n)' do
     it "separates paragraphs with a blank line" do
-      expect(Filler.paragraphs.match(/\n\n/)).to be_true
+      expect(TextEng.paragraphs.match(/\n\n/)).to be_true
     end
 
     it "returns more than one paragraph" do
-      expect(Filler.paragraphs.scan(/\n\n/).size).to be >= 1
+      expect(TextEng.paragraphs.scan(/\n\n/).size).to be >= 1
     end
 
     it "defualts to generating 3 paragraphs" do
-      expect(Filler.paragraphs.scan(/\n\n/).size).to be == 2
+      expect(TextEng.paragraphs.scan(/\n\n/).size).to be == 2
     end
 
     it "returns the number of paragraphs in the argument" do
-      expect(Filler.paragraphs(10).scan(/\n\n/).size).to be == 9
+      expect(TextEng.paragraphs(10).scan(/\n\n/).size).to be == 9
     end
   end
 
