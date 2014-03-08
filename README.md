@@ -6,7 +6,7 @@ Run locally by going cloning and moving to the directory.
 Run by using the following commands:
 
 ```
-gem install text_eng-0.0.1.gem
+gem install text_eng
 irb
 require 'text_eng'
 ```
