@@ -68,4 +68,4 @@ module TextEng
   end
 end
 
-require_relative 'name.rb'
+require_relative 'text_eng/name.rb'
