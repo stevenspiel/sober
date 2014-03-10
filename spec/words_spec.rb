@@ -2,8 +2,8 @@ require_relative 'spec_helper'
 
 describe "All Word Type Arrays" do
   let(:all_words){[ADJECTIVES,NOUNS,VERBS,LONG_VERBS,PASSIVE_VERBS,ARTICLES,PREPOSITIONS,
-                   ADVERBS,PRONOUNS,CONJUNCTIONS,PROPER_NOUNS,FIRST_NAMES,LAST_NAMES,
-                   PUNCTUATION].flatten}
+                   ADVERBS,PRONOUNS,CONJUNCTIONS,PROPER_NOUNS,FIRST_NAMES_M,FIRST_NAMES_F,
+                   LAST_NAMES,PUNCTUATION].flatten}
 
   it "has no more than one space in between words" do
     expect(all_words.select{|w| w.match(/\s{2,}/)}).to eq([])

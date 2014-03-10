@@ -1,6 +1,13 @@
 class TextEng::Name
-  def self.first_name
-    first_name = FIRST_NAMES.sample
+  def self.first_name(gender = :any)
+    if gender == :male
+      first_name = (FIRST_NAMES_M).sample
+    elsif gender == :female
+      first_name = (FIRST_NAMES_F).sample
+    elsif gender == :any
+      first_name = (FIRST_NAMES_M + FIRST_NAMES_F).sample
+    end
+
     first_name[0] = first_name[0].upcase
     first_name
   end
@@ -11,7 +18,7 @@ class TextEng::Name
     last_name
   end
 
-  def self.name
-    "#{self.first_name} #{self.last_name}"
+  def self.name(gender = :any)
+    "#{self.first_name(gender)} #{self.last_name}"
   end
 end
