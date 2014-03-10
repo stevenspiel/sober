@@ -6,7 +6,7 @@ Run locally by going cloning and moving to the directory.
 Run by using the following commands:
 
 ```
-gem install text_eng-0.0.1.gem
+gem install text_eng
 irb
 require 'text_eng'
 ```
@@ -20,6 +20,7 @@ Available commands for current build (0.0.1)
 `TextEng.sentences`  (accepts number as parameter. default is `3`)
 
 `TextEng.paragraphs` (accepts number as parameter. default is `3`)
+
 
 Also supports generating names
 
