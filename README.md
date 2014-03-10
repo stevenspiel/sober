@@ -11,7 +11,7 @@ irb
 require 'text_eng'
 ```
 
-Available commands for current build (0.0.1)
+Available commands for current build (0.0.2)
 
 `TextEng.sentence`   (accepts params `:medium` (defualt), `:long`, and `:short`)
 
@@ -20,6 +20,10 @@ Available commands for current build (0.0.1)
 `TextEng.sentences`  (accepts number as parameter. default is `3`)
 
 `TextEng.paragraphs` (accepts number as parameter. default is `3`)
+
+`TextEng.gender.random(one_letter: false) #=> 'male'`
+
+`TextEng.gender.smart('Ashley Smith') #=> 'female'`
 
 
 Also supports generating names
