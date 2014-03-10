@@ -1,24 +1,26 @@
 require_relative 'spec_helper'
+require_relative '../lib/gender'
 
 describe TextEng::Gender do
-  let(:one_letter_genders){['m','f']}
-  let(:full_name_genders){['male','female']}
+  let(:gender){TextEng::Gender.random}
 
   describe '#random' do
     it "should generate a string" do
-      expect(TextEng::Gender.random).to be_a_kind_of(String)
+      expect(gender).to be_a_kind_of(String)
     end
 
     it "should genderate a full gender by default" do
-
+      expect(gender.size).to be > 1 
     end
 
     it "should generate a single-letter gender when passed parameter" do
-
+      expect(GENDER_SHORT.include?(TextEng::Gender.random(:short))).to eq(true)
     end
 
     it "should produce a random gender" do
-
+      genders = []
+      20.times {genders << TextEng::Gender.random}
+      expect(genders.uniq.size).to be > 1
     end
   end
 
