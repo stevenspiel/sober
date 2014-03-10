@@ -14,7 +14,7 @@ describe TextEng::Gender do
     end
 
     it "should generate a single-letter gender when passed parameter" do
-      expect(GENDER_SHORT.include?(TextEng::Gender.random(:short))).to eq(true)
+      expect(GENDER_SHORT.include?(TextEng::Gender.random one_letter: true)).to eq(true)
     end
 
     it "should produce a random gender" do
