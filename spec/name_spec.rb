@@ -9,6 +9,11 @@ describe TextEng::Name do
     it "should return a capitalized names" do
       expect(first_name[0]).to eq(first_name[0].upcase)
     end
+
+    it "should return a gender-specific name when passed a gender parameter" do
+      expect(FIRST_NAMES_M.include?(TextEng::Name.first_name(:male))).to eq(true)
+      expect(FIRST_NAMES_F.include?(TextEng::Name.first_name(:female))).to eq(true)
+    end
   end
 
   describe '#last_name' do
