@@ -1,5 +1,5 @@
 require_relative 'spec_helper'
-require_relative '../lib/gender'
+require_relative '../lib/text_eng/gender'
 
 describe TextEng::Gender do
   let(:gender){TextEng::Gender.random}
