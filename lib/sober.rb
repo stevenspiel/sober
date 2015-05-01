@@ -4,7 +4,7 @@ require_relative 'logic/medium_clauses'
 require_relative 'logic/long_clauses'
 require_relative 'logic/punctuated_clauses'
 
-module TextEng
+module Sober
   def self.n; NOUNS.sample; end
   def self.pn; PROPER_NOUNS.sample; end
   def self.v; VERBS.sample; end
@@ -20,13 +20,13 @@ module TextEng
   def self.sentence(type = :medium)
     #case when
     extend ShortClauses
-    return sentencefy(self.short_clauses.first) if type == :short
+    return sentencify(self.short_clauses.first) if type == :short
 
     extend MediumClauses
-    return sentencefy(self.medium_clauses.first) if type == :medium
+    return sentencify(self.medium_clauses.first) if type == :medium
 
     extend LongClauses
-    return sentencefy(self.long_clauses.sample) if type == :long
+    return sentencify(self.long_clauses.sample) if type == :long
 
     extend PunctuatedClauses
 
@@ -34,7 +34,7 @@ module TextEng
     if type.is_a?(Fixnum)
       n = type
       paragraph_array = [self.short_clauses,self.medium_clauses,self.punctuated_clauses,self.long_clauses].flatten(1).sample(n)
-      return paragraph_array.map {|sentence_array| sentencefy(sentence_array)}.join(" ")
+      return paragraph_array.map {|sentence_array| sentencify(sentence_array)}.join(' ')
     end
   end
 
@@ -61,11 +61,11 @@ module TextEng
 
   private
 
-  def self.sentencefy(sentence_array)
-    sentencified = sentence_array.join(" ") + '.'
+  def self.sentencify(sentence_array)
+    sentencified = sentence_array.join(' ') + '.'
     sentencified[0] = sentencified[0].capitalize
     sentencified
   end
 end
 
-require_relative 'text_eng/name.rb'
+require_relative 'sober/name.rb'

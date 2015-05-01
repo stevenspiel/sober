@@ -1,3 +1,3 @@
-module TextEng
-  VERSION = "0.0.2"
+module Sober
+  VERSION = '0.0.2'
 end
