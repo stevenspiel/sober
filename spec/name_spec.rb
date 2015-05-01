@@ -1,9 +1,9 @@
 require_relative 'spec_helper'
 
-describe TextEng::Name do
-  let(:first_name){TextEng::Name.first_name}
-  let(:last_name){TextEng::Name.last_name}
-  let(:full_name){TextEng::Name.name}
+describe Sober::Name do
+  let(:first_name){Sober::Name.first_name}
+  let(:last_name){Sober::Name.last_name}
+  let(:full_name){Sober::Name.name}
 
   describe '#first_name' do
     it "should return a capitalized names" do
@@ -11,8 +11,8 @@ describe TextEng::Name do
     end
 
     it "should return a gender-specific name when passed a gender parameter" do
-      expect(FIRST_NAMES_M.include?(TextEng::Name.first_name(:male))).to eq(true)
-      expect(FIRST_NAMES_F.include?(TextEng::Name.first_name(:female))).to eq(true)
+      expect(FIRST_NAMES_M.include?(Sober::Name.first_name(:male))).to eq(true)
+      expect(FIRST_NAMES_F.include?(Sober::Name.first_name(:female))).to eq(true)
     end
   end
 

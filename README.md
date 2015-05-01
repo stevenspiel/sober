@@ -1,37 +1,56 @@
-TextEng
+Sober
 ======
 
-Run locally by going cloning and moving to the directory.
+
+##Setup
 
 Run by using the following commands:
 
 ```
-gem install text_eng
+gem install sober
 irb
-require 'text_eng'
+require 'sober'
 ```
+
+Or add it to your Gemfile
+
+```
+gem 'sober'
+```
+
+##Usage
 
 Available commands for current build (0.0.2)
 
-`TextEng.sentence`   (accepts params `:medium` (defualt), `:long`, and `:short`)
+`Sober.sentence`   (accepts params `:medium` (defualt), `:long`, and `:short`)
 
-`TextEng.paragraph`  (accepts params `:medium` (default), `:long`, and `:short`)
+`Sober.paragraph`  (accepts params `:medium` (default), `:long`, and `:short`)
 
-`TextEng.sentences`  (accepts number as parameter. default is `3`)
+`Sober.sentences`  (accepts number as parameter. default is `3`)
 
-`TextEng.paragraphs` (accepts number as parameter. default is `3`)
+`Sober.paragraphs` (accepts number as parameter. default is `3`)
 
-`TextEng.gender.random(one_letter: false) #=> 'male'`
+`Sober.gender.random(one_letter: false) #=> 'male'`
 
-`TextEng.gender.smart('Ashley Smith') #=> 'female'`
+`Sober.gender.smart('Ashley Smith') #=> 'female'`
 
 
 Also supports generating names
 
 ```
-TextEng.name => (full name)
-TextEng.first_name
-TextEng.last_name
+Sober.name => (full name)
+Sober.first_name
+Sober.last_name
 ```
+
+## Contributing
+
+1. Fork it ( https://github.com/[my-github-username]/formbuilder-js-rails/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
+
+
 
 This project uses MIT-LICENSE.

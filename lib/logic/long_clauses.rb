@@ -1,7 +1,7 @@
 module LongClauses
   def long_clauses
     [
-      [TextEng.n,TextEng.a,TextEng.c,TextEng.n,TextEng.v,TextEng.a,TextEng.pp,TextEng.n,TextEng.v,TextEng.c,TextEng.n,TextEng.v,TextEng.n],
+      [Sober.n,Sober.a,Sober.c,Sober.n,Sober.v,Sober.a,Sober.pp,Sober.n,Sober.v,Sober.c,Sober.n,Sober.v,Sober.n],
       short_clauses[0] + short_clauses[1],
       short_clauses[2] + short_clauses[3],
       short_clauses[4] + short_clauses[5],

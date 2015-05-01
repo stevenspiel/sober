@@ -1,11 +1,11 @@
 $:.push File.expand_path("../lib", __FILE__)
 
 # Maintain your gem's version:
-require "text_eng/version"
+require "sober/version"
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = "text_eng"
+  s.name        = "sober"
   s.version     = TextEng::VERSION
   s.authors     = ["Steven Spiel"]
   s.email       = ["stevenspiel@gmail.com"]

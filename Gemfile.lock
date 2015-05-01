@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    text_eng (0.0.1)
+    sober (0.0.1)
       rails (~> 4.0.0)
 
 GEM
@@ -93,4 +93,4 @@ PLATFORMS
 
 DEPENDENCIES
   rspec
-  text_eng!
+  sober!
